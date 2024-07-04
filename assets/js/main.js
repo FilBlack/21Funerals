@@ -38,7 +38,7 @@
 						images: {
 							'men_holding_casket.jpg': 'center',
 							'burial-funerals.jpg': 'center',
-							'Types-of-Funerals.png': 'center'
+							'Types-of-Funerals.jpg': 'center'
 						},
 
 					// Delay.
@@ -101,36 +101,38 @@
 
 		})();
 	// Options button 
-		document.addEventListener('DOMContentLoaded', function() {
-			"use strict";
-		
-			var $body = document.querySelector('body');
-			var $packsButton = document.getElementById('packsButton');
-			var $boxesContainer = document.getElementById('boxesContainer');
-			
-			const button_texts = ["Basic Package", "Premium Package", "Elite Package"];
-			$packsButton.addEventListener('click', function() {
-				// Clear previous boxes if any
-				$boxesContainer.innerHTML = '';
-				if (clicked === true) {}
-
-				else {
-					// Create three clickable boxes
-					for (var i = 0; i <= 2; i++) {
-						var $box = document.createElement('div');
-						$box.innerText = button_texts[i]; // Text inside the box
-						$box.classList.add('clickable-box'); // CSS class for styling
-						$box.addEventListener('click', function() {
-							alert('You clicked ' + this.innerText);
-						});
-						
-						$boxesContainer.appendChild($box);
-					}
+	document.addEventListener('DOMContentLoaded', function() {
+		"use strict";
+	
+		var $body = document.querySelector('body');
+		var $packsButton = document.getElementById('packsButton');
+		var $boxesContainer = document.getElementById('boxesContainer');
+		var boxesVisible = false; // This flag will track whether the boxes are visible
+	
+		const button_texts = ["Basic Package", "Premium Package", "Elite Package"];
+	
+		$packsButton.addEventListener('click', function() {
+			// Check if boxes are already visible
+			if (boxesVisible) {
+				// If boxes are visible, hide them
+				$boxesContainer.innerHTML = ''; // Clear the container
+				boxesVisible = false; // Update flag
+			} else {
+				// Boxes are not visible, show them
+				for (var i = 0; i <= 2; i++) {
+					var $box = document.createElement('div');
+					$box.innerText = button_texts[i]; // Text inside the box
+					$box.classList.add('clickable-box'); // CSS class for styling
+					$box.addEventListener('click', function() {
+						alert('You clicked ' + this.innerText);
+					});
+	
+					$boxesContainer.appendChild($box);
 				}
-				var clicked = true;
-
-			});
+				boxesVisible = true; // Update flag to indicate that boxes are now visible
+			}
 		});
+	});
 	// Signup Form.
 		(function() {
 
