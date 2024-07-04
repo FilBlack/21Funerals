@@ -1,0 +1,19 @@
+/* Clickable Boxes Styles */
+
+.clickable-box {
+    @include vendor('padding', '10px');
+    @include vendor('margin', '5px');
+    @include vendor('background-color', 'lightblue');
+    @include vendor('cursor', 'pointer');
+    @include vendor('border', '1px solid #000');
+    @include vendor('transition', 'background-color 0.3s, transform 0.3s');
+
+    &:hover {
+        @include vendor('background-color', darken(lightblue, 10%));
+        @include vendor('transform', 'scale(1.05)');
+    }
+
+    &:active {
+        @include vendor('transform', 'scale(0.95)');
+    }
+}

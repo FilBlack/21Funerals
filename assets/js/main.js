@@ -100,7 +100,31 @@
 				}, settings.delay);
 
 		})();
-
+	// Options button 
+		document.addEventListener('DOMContentLoaded', function() {
+			"use strict";
+		
+			var $body = document.querySelector('body');
+			var $packsButton = document.getElementById('packsButton');
+			var $boxesContainer = document.getElementById('boxesContainer');
+		
+			$packsButton.addEventListener('click', function() {
+				// Clear previous boxes if any
+				$boxesContainer.innerHTML = '';
+		
+				// Create three clickable boxes
+				for (var i = 1; i <= 3; i++) {
+					var $box = document.createElement('div');
+					$box.innerText = 'Pack ' + i; // Text inside the box
+					$box.classList.add('clickable-box'); // CSS class for styling
+					$box.addEventListener('click', function() {
+						alert('You clicked ' + this.innerText);
+					});
+		
+					$boxesContainer.appendChild($box);
+				}
+			});
+		});
 	// Signup Form.
 		(function() {
 
