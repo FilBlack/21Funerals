@@ -58,6 +58,27 @@
 
 }
 
+@mixin display($type) {
+	display: -webkit-#{$type};
+	display: -moz-#{$type};
+	display: -ms-#{$type};
+	display: $type;
+  }
+
+@mixin flex-wrap($wrap) {
+-webkit-flex-wrap: $wrap;
+-ms-flex-wrap: $wrap;
+flex-wrap: $wrap;
+}
+
+@mixin flex($values) {
+	-webkit-flex: $values; // Chrome, Safari, newer versions of Opera
+	-moz-flex: $values;    // Firefox
+	-ms-flex: $values;     // Internet Explorer 10
+	flex: $values;         // Standard syntax
+  }
+  
+  
 /// Encodes a SVG data URL so IE doesn't choke (via codepen.io/jakob-e/pen/YXXBrp).
 /// @param {string} $svg SVG data URL.
 /// @return {string} Encoded SVG data URL.

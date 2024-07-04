@@ -1,0 +1,21 @@
+/* Error: (nav: 0.5s, transition: 0.2s, bg-fadein: 2s, bg-transition: 3s, bg-slide: 45s) isn't a valid CSS value.
+ *     ,
+ * 297 |         $index: str-index("#{ $duration }", $search);;
+ *     |                               ^^^^^^^^^
+ *     '
+ *   assets\sass\libs\_vendor.scss 297:25  str-replace()
+ *   assets\sass\libs\_vendor.scss 315:58  str-replace-all()
+ *   assets\sass\libs\_vendor.scss 367:28  vendor()
+ *   assets\sass\base\_page.scss 48:3      @import
+ *   assets\sass\main.scss 30:10           root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: (nav: 0.5s, transition: 0.2s, bg-fadein: 2s, bg-transition: 3s, bg-slide: 45s) isn't a valid CSS value.\a     \2577 \a 297 \2502          $index: str-index(\"#{ $duration }\", $search);;\a     \2502                                ^^^^^^^^^\a     \2575 \a   assets\\sass\\libs\\_vendor.scss 297:25  str-replace()\a   assets\\sass\\libs\\_vendor.scss 315:58  str-replace-all()\a   assets\\sass\\libs\\_vendor.scss 367:28  vendor()\a   assets\\sass\\base\\_page.scss 48:3      @import\a   assets\\sass\\main.scss 30:10           root stylesheet";
+}
