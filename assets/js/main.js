@@ -36,9 +36,9 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
-							'men_holding_casket.jpg': 'center',
-							'burial-funerals.jpg': 'center',
-							'Types-of-Funerals.jpg': 'center'
+							'../images//men_holding_casket.jpg': 'center',
+							'../images//burial-funerals.jpg': 'center',
+							'../images/Types-of-Funerals.jpg': 'center'
 						},
 
 					// Delay.

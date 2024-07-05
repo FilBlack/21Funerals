@@ -1,56 +1,54 @@
-/* Clickable Boxes Styles */
-
 #boxesContainer {
-    @include display(flex); // Mixin for display with vendor prefixes
+    display: flex;
     justify-content: space-around;
     align-items: center;
-    @include flex-wrap(wrap); // Mixin for flex-wrap with vendor prefixes
+    flex-wrap: wrap;
 
     .clickable-box {
-        @include flex(0 1 auto); // Mixin for flex with vendor prefixes
-        @include vendor('padding', '10px');
-        @include vendor('margin', '5px');
-        @include vendor('background-color', 'lightblue');
-        @include vendor('cursor', 'pointer');
-        @include vendor('border', '1px solid #000');
-        @include vendor('transition', 'background-color 0.3s, transform 0.3s');
-        position: relative; // Ensures z-index is applied correctly
-        z-index: 1000; // High z-index to keep it in front
-    
+        flex: 0 1 auto;
+        padding: 10px;
+        margin: 5px;
+        background-color: lightblue;
+        cursor: pointer;
+        border: 1px solid #000;
+        position: relative;
+        z-index: 1000;
+        transition: background-color 0.3s, transform 0.3s;
+
         &:hover {
-            @include vendor('background-color', darken(lightblue, 10%));
-            @include vendor('transform', 'scale(1.05)');
+            background-color: darken(lightblue, 10%);
+            transform: scale(1.05);
         }
-    
+
         &:active {
-            @include vendor('transform', 'scale(0.95)');
+            transform: scale(0.95);
         }
     }
 }
 
 #packsButton {
-    @include vendor(display, inline-block); // Ensures the button does not span the full width
-    @include vendor(padding, 0.75em 1.5em); // Padding around the text
-    @include vendor(background-color, #3498db); // Background color of the button
-    @include vendor(border, none); // No border for a cleaner look
-    @include vendor(border-radius, 5px); // Rounded corners
-    @include vendor(color, #ffffff); // Text color
-    @include vendor(font-size, 1em); // Font size
-    @include vendor(text-transform, uppercase); // Uppercase text for styling
-    @include vendor(cursor, pointer); // Cursor to pointer to indicate it's clickable
-    @include vendor(transition, background-color 0.3s); // Smooth transition for hover effects
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
 
     &:hover {
-        @include vendor(background-color, darken(#3498db, 10%)); // Darkens on hover
+        background-color: darken(#3498db, 10%);
     }
 
     &:focus, &:active {
         outline: none;
-        @include vendor(background-color, darken(#3498db, 20%)); // Further darkens on active/focus
+        background-color: darken(#3498db, 20%);
     }
 
     &:disabled {
-        @include vendor(background-color, lighten(#3498db, 20%)); // Lightens when disabled
-        @include vendor(cursor, not-allowed); // Changes cursor on disabled
+        background-color: lighten(#3498db, 20%);
+        cursor: not-allowed;
     }
 }
