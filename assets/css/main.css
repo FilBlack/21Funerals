@@ -876,4 +876,53 @@ button:disabled,
     margin: 1em 0 0 0;
     position: relative;
   }
+}
+
+#boxesContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#boxesContainer .clickable-box {
+  flex: 0 1 auto;
+  padding: 10px;
+  margin: 5px;
+  background-color: lightblue;
+  cursor: pointer;
+  border: 1px solid #000;
+  position: relative;
+  z-index: 1000;
+  transition: background-color 0.3s, transform 0.3s;
+}
+#boxesContainer .clickable-box:hover {
+  background-color: #86c5da;
+  transform: scale(1.05);
+}
+#boxesContainer .clickable-box:active {
+  transform: scale(0.95);
+}
+
+#packsButton {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#packsButton:hover {
+  background-color: #217dbb;
+}
+#packsButton:focus, #packsButton:active {
+  outline: none;
+  background-color: #196090;
+}
+#packsButton:disabled {
+  background-color: #8bc4ea;
+  cursor: not-allowed;
 }/*# sourceMappingURL=main.css.map */
