@@ -5,53 +5,84 @@
     flex-wrap: wrap;
 
     .clickable-box {
-        color: _palette(fg-bold);
-		display: block;
-		font-size: 0.9em;
+        @include vendor('appearance', 'none');
+		@include vendor('transition', (
+			'background-color #{_duration(transition)} ease-in-out',
+			'color #{_duration(transition)} ease-in-out',
+			'opacity #{_duration(transition)} ease-in-out'
+		));
+		background-color: _palette(accent, bg);
+		border-radius: _size(border-radius);
+		border: 0;
+		color: _palette(accent, fg-bold) !important;
+		cursor: pointer;
+		display: inline-block;
 		font-weight: _font(weight-bold);
-		margin: 0 0 (_size(element-margin) * 0.5) 0;
+		height: _size(element-height);
+		line-height: _size(element-height);
+		padding: 0 1.125em;
+		text-align: center;
+		text-decoration: none;
+		white-space: nowrap;
+        margin-top: 30px;
 
-        flex: 0 1 auto;
-        padding: 10px;
-        cursor: pointer;
-        position: relative;
-        z-index: 1000;
-        transition: background-color 0.3s, transform 0.3s;
+		&:hover {
+			background-color: lighten(_palette(accent, bg), 5);
+		}
 
-        &:hover {
-            background-color: darken(lightblue, 10%);
-            transform: scale(1.05);
-        }
+		&:active {
+			background-color: darken(_palette(accent, bg), 5);
+		}
 
-        &:active {
-            transform: scale(0.95);
-        }
+		&.disabled,
+		&:disabled {
+			opacity: 0.5;
+		}
+
+		@include breakpoint('<=xsmall') {
+			padding: 0;
+		}
     }
+    margin-bottom: 30px;
+
 }
 
 #packsButton {
-    display: inline-block;
-    padding: 0.75em 1.5em;
-    background-color: #3498db;
-    border: none;
-    border-radius: 5px;
-    color: #ffffff;
-    font-size: 1em;
-    text-transform: uppercase;
+    @include vendor('appearance', 'none');
+    @include vendor('transition', (
+        'background-color #{_duration(transition)} ease-in-out',
+        'color #{_duration(transition)} ease-in-out',
+        'opacity #{_duration(transition)} ease-in-out'
+    ));
+    background-color: _palette(accent, bg);
+    border-radius: _size(border-radius);
+    border: 0;
+    color: _palette(accent, fg-bold) !important;
     cursor: pointer;
-    transition: background-color 0.3s;
+    display: inline-block;
+    font-weight: _font(weight-bold);
+    height: _size(element-height);
+    line-height: _size(element-height);
+    padding: 0 1.125em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
 
     &:hover {
-        background-color: darken(#3498db, 10%);
+        background-color: lighten(_palette(accent, bg), 5);
     }
 
-    &:focus, &:active {
-        outline: none;
-        background-color: darken(#3498db, 20%);
+    &:active {
+        background-color: darken(_palette(accent, bg), 5);
     }
 
+    &.disabled,
     &:disabled {
-        background-color: lighten(#3498db, 20%);
-        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    @include breakpoint('<=xsmall') {
+        padding: 0;
     }
 }
+
