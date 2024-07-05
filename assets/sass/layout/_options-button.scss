@@ -5,12 +5,15 @@
     flex-wrap: wrap;
 
     .clickable-box {
+        color: _palette(fg-bold);
+		display: block;
+		font-size: 0.9em;
+		font-weight: _font(weight-bold);
+		margin: 0 0 (_size(element-margin) * 0.5) 0;
+
         flex: 0 1 auto;
         padding: 10px;
-        margin: 5px;
-        background-color: lightblue;
         cursor: pointer;
-        border: 1px solid #000;
         position: relative;
         z-index: 1000;
         transition: background-color 0.3s, transform 0.3s;
