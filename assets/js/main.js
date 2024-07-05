@@ -36,12 +36,13 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
-							'../images//men_holding_casket.jpg': 'center',
-							'../images//burial-funerals.jpg': 'center',
-							'../images/Types-of-Funerals.jpg': 'center'
+        
+							'https://www.blackdoor.cz/21Funerals/images/Types-of-Funerals.jpg': 'center',
+							'https://www.blackdoor.cz/21Funerals/images/burial-funerals.jpg': 'center',
+							'https://www.blackdoor.cz/21Funerals/images/men_holding_casket.jpg': 'center'
 						},
 
-					// Delay.
+					// Delay
 						delay: 6000
 
 				};
